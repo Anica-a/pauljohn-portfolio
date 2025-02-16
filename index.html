@@ -13,17 +13,34 @@
             color: #333;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         header {
             background: #0073e6;
             color: white;
             padding: 20px;
             text-align: center;
+            width: 100%;
+        }
+        .profile-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .profile-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0073e6;
         }
         nav {
             background: #005bb5;
             padding: 15px;
             text-align: center;
+            width: 100%;
         }
         nav ul {
             list-style: none;
@@ -40,12 +57,18 @@
         }
         section {
             max-width: 900px;
-            margin: auto;
+            margin: 20px auto;
             background: white;
             padding: 20px;
-            margin-top: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .work-experience {
+            text-align: left;
+        }
+        .work-experience h3 {
+            color: #0073e6;
         }
         .code-block {
             background: #f8f8f8;
@@ -53,6 +76,7 @@
             border-radius: 5px;
             overflow-x: auto;
             font-family: monospace;
+            text-align: left;
         }
         .button {
             display: inline-block;
@@ -74,67 +98,38 @@
         <h1>Paul John D. Bautista</h1>
         <p>Experienced IT professional specializing in IT service management, system administration, and automation.</p>
     </header>
+    <div class="profile-container">
+        <img src="profile.jpg" alt="Paul John Bautista">
+    </div>
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <section id="skills">
-        <h2>Skills & Services</h2>
+    <section id="experience" class="work-experience">
+        <h2>Work Experience</h2>
+        <h3>Senior Service Desk Engineer - CreditCorp Group (2022 - Present)</h3>
         <ul>
-            <li>IT Service Management</li>
-            <li>System Administration</li>
-            <li>Automation</li>
-            <li>Technical Support</li>
-            <li>Linux & Windows Server Management</li>
+            <li>Implemented and configured Avaya systems to enhance operational efficiency.</li>
+            <li>Developed PowerShell scripts to automate IT service requests and security management.</li>
+            <li>Managed company-wide inventory and procurement for IT assets.</li>
+            <li>Led IT operations and provided guidance to the technical team.</li>
         </ul>
-    </section>
-    <section id="projects">
-        <h2>Code Showcase</h2>
-        <h3>Python Automation Script</h3>
-        <pre class="code-block">
-import os
-import shutil
-
-def clean_downloads():
-    downloads_path = os.path.expanduser("~/Downloads")
-    for file in os.listdir(downloads_path):
-        if file.endswith(".log"):
-            shutil.move(os.path.join(downloads_path, file), "/path/to/logs/")
-
-if __name__ == "__main__":
-    clean_downloads()
-        </pre>
-        
-        <h3>SQL Query for Data Filtering</h3>
-        <pre class="code-block">
-SELECT name, email, last_login FROM users
-WHERE active = 1
-ORDER BY last_login DESC;
-        </pre>
-        
-        <h3>Linux Bash Script for Server Maintenance</h3>
-        <pre class="code-block">
-#!/bin/bash
-echo "Updating and Cleaning System"
-sudo apt update && sudo apt upgrade -y
-sudo apt autoremove -y
-        </pre>
-        
-        <h3>API Integration with Python</h3>
-        <pre class="code-block">
-import requests
-response = requests.get("https://api.example.com/data")
-print(response.json())
-        </pre>
-        
-        <h3>PowerShell Script for Windows Admin Tasks</h3>
-        <pre class="code-block">
-Get-Service | Where-Object {$_.Status -eq "Running"} | Format-Table -AutoSize
-        </pre>
+        <h3>IT Service Desk Analyst - NTT (Analog Devices) (2019 - 2021)</h3>
+        <ul>
+            <li>Led incident management and escalation procedures.</li>
+            <li>Resolved technical issues and provided IT support to enterprise users.</li>
+            <li>Automated ticketing processes to improve resolution times.</li>
+        </ul>
+        <h3>Technical Support Representative - iQor Philippines (2016 - 2018)</h3>
+        <ul>
+            <li>Provided troubleshooting support for voice, internet, and data issues.</li>
+            <li>Assisted in billing adjustments and customer service operations.</li>
+        </ul>
     </section>
     <section id="contact">
         <h2>Contact</h2>
