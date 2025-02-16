@@ -17,13 +17,17 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
+        }
+        header, nav, section {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
         }
         header {
             background: #0073e6;
             color: white;
             padding: 20px;
-            text-align: center;
-            width: 100%;
         }
         .profile-container {
             text-align: center;
@@ -39,8 +43,6 @@
         nav {
             background: #005bb5;
             padding: 15px;
-            text-align: center;
-            width: 100%;
         }
         nav ul {
             list-style: none;
@@ -56,19 +58,11 @@
             font-weight: bold;
         }
         section {
-            max-width: 900px;
-            margin: 20px auto;
             background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .work-experience {
-            text-align: left;
-        }
-        .work-experience h3 {
-            color: #0073e6;
+            margin: 20px auto;
         }
         .code-block {
             background: #f8f8f8;
@@ -110,7 +104,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <section id="experience" class="work-experience">
+    <section id="experience">
         <h2>Work Experience</h2>
         <h3>Senior Service Desk Engineer - CreditCorp Group (2022 - Present)</h3>
         <ul>
@@ -130,6 +124,57 @@
             <li>Provided troubleshooting support for voice, internet, and data issues.</li>
             <li>Assisted in billing adjustments and customer service operations.</li>
         </ul>
+    </section>
+    <section id="skills">
+        <h2>Skills & Services</h2>
+        <ul>
+            <li>IT Service Management (HEAT Ivanti, ITIL)</li>
+            <li>System Administration (Linux, Ubuntu, Citrix)</li>
+            <li>Automation (PowerShell, Bash Scripting, Avaya Configuration)</li>
+            <li>Database Management (SQL, MySQL)</li>
+            <li>Technical Support & Troubleshooting</li>
+            <li>Network & Security Administration</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Code Showcase</h2>
+        <h3>Python Automation Script</h3>
+        <pre class="code-block">
+import os
+import shutil
+
+def clean_downloads():
+    downloads_path = os.path.expanduser("~/Downloads")
+    for file in os.listdir(downloads_path):
+        if file.endswith(".log"):
+            shutil.move(os.path.join(downloads_path, file), "/path/to/logs/")
+
+if __name__ == "__main__":
+    clean_downloads()
+        </pre>
+        <h3>SQL Query for Data Filtering</h3>
+        <pre class="code-block">
+SELECT name, email, last_login FROM users
+WHERE active = 1
+ORDER BY last_login DESC;
+        </pre>
+        <h3>Linux Bash Script for Server Maintenance</h3>
+        <pre class="code-block">
+#!/bin/bash
+echo "Updating and Cleaning System"
+sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y
+        </pre>
+        <h3>API Integration with Python</h3>
+        <pre class="code-block">
+import requests
+response = requests.get("https://api.example.com/data")
+print(response.json())
+        </pre>
+        <h3>PowerShell Script for Windows Admin Tasks</h3>
+        <pre class="code-block">
+Get-Service | Where-Object {$_.Status -eq "Running"} | Format-Table -AutoSize
+        </pre>
     </section>
     <section id="contact">
         <h2>Contact</h2>
