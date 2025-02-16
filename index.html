@@ -3,110 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul John Bautista - IT Portfolio</title>
+    <title>Paul John D. Bautista - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #1e1e1e, #3a3a3a);
-            color: #ddd;
-            text-align: center;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #222;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
         nav {
-            margin-bottom: 20px;
+            background: #005bb5;
+            padding: 15px;
+            text-align: center;
         }
-        nav a {
-            color: #f4b400;
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            margin: 0 20px;
             font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffffff;
-        }
-        h1 {
-            font-size: 2.8em;
-            font-weight: 700;
-            color: #f4b400;
         }
         section {
-            margin-bottom: 30px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
             padding: 20px;
-            background: #292929;
-            border-radius: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
         }
         .button {
             display: inline-block;
-            padding: 12px 25px;
-            background: #f4b400;
-            color: #222;
+            padding: 10px 20px;
+            background: #0073e6;
+            color: white;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px;
             font-weight: bold;
-            transition: background 0.3s;
         }
         .button:hover {
-            background: #ffd633;
+            background: #005bb5;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="#about">About</a> | 
-            <a href="#skills">Skills</a> | 
-            <a href="#projects">Projects</a> | 
-            <a href="#contact">Contact</a>
-        </nav>
+    <header>
+        <h1>Paul John D. Bautista</h1>
+        <p>Experienced IT professional specializing in IT service management, system administration, and automation.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="skills">
+        <h2>Skills & Services</h2>
+        <ul>
+            <li>IT Service Management</li>
+            <li>System Administration</li>
+            <li>Automation</li>
+            <li>Technical Support</li>
+            <li>Linux & Windows Server Management</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Code Showcase</h2>
+        <h3>Python Automation Script</h3>
+        <pre class="code-block">
+import os
+import shutil
+
+def clean_downloads():
+    downloads_path = os.path.expanduser("~/Downloads")
+    for file in os.listdir(downloads_path):
+        if file.endswith(".log"):
+            shutil.move(os.path.join(downloads_path, file), "/path/to/logs/")
+
+if __name__ == "__main__":
+    clean_downloads()
+        </pre>
         
-        <section id="about">
-            <h1>Paul John D. Bautista</h1>
-            <img src="profile.jpg" alt="Paul John Bautista" style="display:block; margin:auto; width:150px; border-radius:50%;">
-            <p>Experienced IT professional specializing in IT service management, system administration, and automation.</p>
-        </section>
+        <h3>SQL Query for Data Filtering</h3>
+        <pre class="code-block">
+SELECT name, email, last_login FROM users
+WHERE active = 1
+ORDER BY last_login DESC;
+        </pre>
         
-        <section id="skills">
-            <h2>Skills & Services</h2>
-            <ul>
-                <li>IT Service Management (HEAT Ivanti, ITIL)</li>
-                <li>System Administration (Linux, Ubuntu, Citrix)</li>
-                <li>Automation (PowerShell, Bash Scripting, Avaya Configuration)</li>
-                <li>Database Management (SQL, MySQL)</li>
-            </ul>
-        </section>
+        <h3>Linux Bash Script for Server Maintenance</h3>
+        <pre class="code-block">
+#!/bin/bash
+echo "Updating and Cleaning System"
+sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y
+        </pre>
         
-        <section id="projects">
-            <h2>Projects</h2>
-            <h3>Automated IT Service Request Processing</h3>
-            <p>Developed PowerShell scripts to automate account unlocks, MFA resets, and Citrix session resets, reducing processing time by 70%.</p>
-            
-            <h3>Linux Thin Client Deployment</h3>
-            <p>Created customized Linux images for Wyse 3040 thin clients, improving performance and security.</p>
-            
-            <h3>Avaya Agent Deployment</h3>
-            <p>Standardized Avaya configurations, reducing setup time by 50%.</p>
-        </section>
+        <h3>API Integration with Python</h3>
+        <pre class="code-block">
+import requests
+response = requests.get("https://api.example.com/data")
+print(response.json())
+        </pre>
         
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: pauljohn.bautista01@gmail.com</p>
-            <p>Phone: +639457941797</p>
-            <p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
-            <p>GitHub: <a href="#">Your GitHub Profile</a></p>
-            <p>OnlineJobs.PH: <a href="https://www.onlinejobs.ph/jobseekers/info/1893802" target="_blank">My OnlineJobs.PH Profile</a></p>
-            <a href="mailto:pauljohn.bautista01@gmail.com" class="button">Hire Me</a>
-        </section>
-    </div>
+        <h3>PowerShell Script for Windows Admin Tasks</h3>
+        <pre class="code-block">
+Get-Service | Where-Object {$_.Status -eq "Running"} | Format-Table -AutoSize
+        </pre>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:pauljohn@example.com">pauljohn@example.com</a></p>
+        <p>Phone: +639457941797</p>
+        <p><a href="https://www.onlinejobs.ph/jobseekers/info/1893802">OnlineJobs.PH Profile</a></p>
+        <a href="mailto:pauljohn@example.com" class="button">Hire Me</a>
+    </section>
 </body>
 </html>
